@@ -1,0 +1,28 @@
+Snap Sparql query (inferred model):
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX mbo: <http:/i-lab.aegean.gr/ontologies/mubotOnto/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT ?v ?z
+WHERE {
+ mbo:SnakeGoddess mbo:foundAt ?v.
+?v dbo:location ?z.
+}
+
+
+Sparql query (asserted model):
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX mbo: <http:/i-lab.aegean.gr/ontologies/mubotOnto/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT ?v ?z
+WHERE {
+ mbo:SnakeGoddess mbo:discoveredAt ?v.
+?v dbo:location ?z.
+}
