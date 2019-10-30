@@ -1,4 +1,5 @@
 Snap Sparql query (inferred model):
+[1] where was Snake Goddess found?
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -9,11 +10,30 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
 SELECT ?v ?z
 WHERE {
  mbo:SnakeGoddess mbo:foundAt ?v.
-?v dbo:location ?z.
+ ?v dbo:location ?z.
 }
+
+The returned data in variables are: ?v = mbo: KnossosPalace, z? = mbo:Crete.
+
+[2] what was found in Crete?
+
+REFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX mbo: <http:/i-lab.aegean.gr/ontologies/mubotOnto/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT ?s ?v
+WHERE {
+ ?s mbo:foundAt ?v.
+ ?v dbo:location mbo:Crete.
+}
+The returned data in variables are: ?s = mbo:SnakeGoddess, v? = mbo:KnossosPalace.
 
 
 Sparql query (asserted model):
+
+[1] where was Snake Goddess discovered?
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -24,5 +44,7 @@ PREFIX dbo: <http://dbpedia.org/ontology/>
 SELECT ?v ?z
 WHERE {
  mbo:SnakeGoddess mbo:discoveredAt ?v.
-?v dbo:location ?z.
+ ?v dbo:location ?z.
 }
+
+The returned data in variables are: ?v = mbo: KnossosPalace, z? = mbo:Crete.
